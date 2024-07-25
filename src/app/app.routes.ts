@@ -9,22 +9,27 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    title: 'Home | Cricket Pulse',
   },
   {
     path: 'live',
     component: LiveComponent,
+    title: 'Live Matches | Cricket Pulse',
   },
   {
     path: 'history',
     component: HistoryComponent,
+    title: 'Match History | Cricket Pulse',
   },
   {
     path: 'point-table',
     component: PointTableComponent,
+    title: 'Point Table | Cricket Pulse',
   },
   {
     path: 'upcoming',
     component: UpcomingComponent,
+    title: 'Upcoming Matches | Cricket Pulse',
   },
   {
     path: '',
