@@ -16,13 +16,14 @@ export class LiveComponent implements OnInit {
   liveMatches: any;
   ngOnInit(): void {
     this.loadLiveMatches();
-    console.log(this.liveMatches);
+
+    setInterval(() => this.loadLiveMatches(), 1000);
   }
 
   private loadLiveMatches() {
     this.service.getLiveMatches().subscribe(
-      (data) => {
-        this.liveMatches = data;
+      (data: any) => {
+        this.liveMatches = data.matchList;
       },
       (error) => {
         console.log(error);

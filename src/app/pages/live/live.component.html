@@ -3,7 +3,7 @@
 </div>
 
 <div class="card-container items-stretch flex flex-wrap flex-col md:flex-row">
-  @for (match of liveMatches.matchList; track $index) {
+  @for (match of liveMatches; track $index) {
   <div class="md:w-[33.33%] w-full mb-4">
     <app-live-match [match]="match" />
   </div>

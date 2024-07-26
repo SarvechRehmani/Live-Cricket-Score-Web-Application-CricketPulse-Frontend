@@ -14,13 +14,12 @@ export class HistoryComponent implements OnInit {
   allMatchesDB: any;
   ngOnInit(): void {
     this.loadAllMatches();
-    console.log(this.allMatchesDB);
   }
 
   private loadAllMatches() {
     this.service.getAllMatches().subscribe(
-      (data) => {
-        this.allMatchesDB = data;
+      (data: any) => {
+        this.allMatchesDB = data.matchList;
       },
       (error) => {
         console.error('Error fetching matches from API', error);
