@@ -1,7 +1,10 @@
 <!-- navigation.component.html -->
 <nav class="bg-gray-800 p-4">
-  <div class="container mx-auto flex justify-between items-center">
-    <div class="text-white text-xl font-bold">Cricket Scores</div>
+  <div class="container mx-auto flex justify-evenly items-center">
+    <div class="text-white text-xl font-bold">
+      <img src="assets/images/logo.png" alt="" class="inline w-8" />
+      Cricket Pulse
+    </div>
     <div class="block lg:hidden">
       <button
         (click)="toggleMenu()"
@@ -27,37 +30,42 @@
       <ul class="flex space-x-4">
         <li>
           <a
+            [routerLink]="'/home'"
             href="#"
             class="hover:bg-gray-900 hover:text-white text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out"
-            >Home</a
+            ><i class="fa-solid fa-house mr-1"></i> Home</a
           >
         </li>
         <li>
           <a
+            [routerLink]="'/live'"
             href="#"
             class="hover:bg-gray-900 hover:text-white text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out"
-            >Live Matches</a
+            ><i class="fa-solid fa-video mr-1"></i> Live Matches</a
           >
         </li>
         <li>
           <a
+            [routerLink]="'/upcoming'"
             href="#"
             class="hover:bg-gray-900 hover:text-white text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out"
-            >Upcoming Matches</a
+            ><i class="fa-solid fa-calendar-days mr-1"></i> Upcoming Matches</a
           >
         </li>
         <li>
           <a
+            [routerLink]="'/history'"
             href="#"
             class="hover:bg-gray-900 hover:text-white text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out"
-            >History</a
+            ><i class="fa-solid fa-clock-rotate-left mr-1"></i> History</a
           >
         </li>
         <li>
           <a
+            [routerLink]="'/point-table'"
             href="#"
             class="hover:bg-gray-900 hover:text-white text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out"
-            >Point Table</a
+            ><i class="fa-solid fa-table-list mr-1"></i> Point Table</a
           >
         </li>
       </ul>
@@ -67,37 +75,42 @@
     <ul class="flex flex-col space-y-2">
       <li>
         <a
+          [routerLink]="'/home'"
           href="#"
           class="hover:bg-gray-900 hover:text-white text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out"
-          >Home</a
+          ><i class="fa-solid fa-house mr-1"></i> Home</a
         >
       </li>
       <li>
         <a
+          [routerLink]="'/live'"
           href="#"
           class="hover:bg-gray-900 text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out"
-          >Live Matches</a
+          ><i class="fa-solid fa-video mr-1"></i> Live Matches</a
         >
       </li>
       <li>
         <a
+          [routerLink]="'/upcoming'"
           href="#"
           class="hover:bg-gray-900 hover:text-white text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out"
-          >Upcoming Matches</a
+          ><i class="fa-solid fa-calendar-days mr-1"></i> Upcoming Matches</a
         >
       </li>
       <li>
         <a
+          [routerLink]="'/history'"
           href="#"
           class="hover:bg-gray-900 hover:text-white text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out"
-          >History</a
+          ><i class="fa-solid fa-clock-rotate-left mr-1"></i> History</a
         >
       </li>
       <li>
         <a
+          [routerLink]="'/point-table'"
           href="#"
           class="hover:bg-gray-900 hover:text-white text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out"
-          >Point Table</a
+          ><i class="fa-solid fa-table-list mr-1"></i> Point Table</a
         >
       </li>
     </ul>
