@@ -1,1 +1,13 @@
-<p>history works!</p>
+<div class="flex justify-center">
+  <h1 class="text-4xl font-extrabold text-gray-800">Live Cricket Matches</h1>
+</div>
+
+<div class="card-container items-stretch flex flex-wrap flex-col md:flex-row">
+  @for (match of allMatchesDB.matchList; track $index) {
+  <div class="md:w-[33.33%] w-full mb-4">
+    <app-live-match [match]="match" />
+  </div>
+  }@empty {
+  <h1 class="text-center text-gray-800">No live matches found.</h1>
+  }
+</div>
