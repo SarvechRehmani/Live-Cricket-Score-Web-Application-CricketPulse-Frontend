@@ -1,1 +1,38 @@
-<p>point-table works!</p>
+<div class="flex justify-center my-4 relative">
+  <h1 class="text-4xl font-extrabold text-gray-800">Point Table CW 23</h1>
+</div>
+
+<!-- points-table.component.html -->
+<div class="container mx-auto mt-8">
+  <div class="overflow-x-auto">
+    <table class="min-w-full overflow-hidden rounded-lg">
+      <thead>
+        <tr class="bg-gray-800 text-white">
+          <th class="py-2 px-4">#</th>
+          @for (heading of tableHeading; track $index) { @if (heading !='') {
+          <th class="py-3 px-4">{{ heading }}</th>
+          } }
+        </tr>
+      </thead>
+      <tbody>
+        @for (team of pointTable; track $index) {
+        <tr
+          [ngClass]="{
+            'bg-green-200': $index < 5,
+            'hover:bg-green-300':  $index < 5,
+            'bg-red-200': $index >= 5,
+            'hover:bg-red-300':  $index >= 5,
+          }"
+          class="duration-300 border-b-2 transition-all cursor-pointer transform hover:scale-105"
+        >
+          @if ( $index >0 ) {
+          <td class="py-2 px-4 text-center">{{ $index }}</td>
+          @for (data of team; track $index) { @if ( data !='' ) {
+          <td class="py-2 px-4">{{ data }}</td>
+          } } }
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

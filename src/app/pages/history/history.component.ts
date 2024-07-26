@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiCallService } from '../../services/api-call.service';
 import { LiveMatchComponent } from '../../components/live-match/live-match.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-history',
   standalone: true,
-  imports: [LiveMatchComponent],
+  imports: [LiveMatchComponent, HttpClientModule],
   templateUrl: './history.component.html',
   styleUrl: './history.component.css',
 })
