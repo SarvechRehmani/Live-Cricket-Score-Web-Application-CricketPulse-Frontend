@@ -19,11 +19,14 @@ export class LiveComponent implements OnInit {
     this.loadLiveMatches();
   }
 
+  reloadClass: any;
   reload() {
+    this.reloadClass = 'fa-spin';
     this.loadLiveMatches();
     console.log(1);
 
     this.toast.info('Data has been refreshed', 'Reloaded successfully');
+    this.reloadClass = '';
   }
 
   loadLiveMatches() {
