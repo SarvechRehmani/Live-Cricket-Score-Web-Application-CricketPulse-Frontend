@@ -1,4 +1,11 @@
-import { Component, inject, OnInit } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  inject,
+  NgZone,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { ApiCallService } from '../../services/api-call.service';
 import { LiveMatchComponent } from '../../components/live-match/live-match.component';
 import { CommonModule } from '@angular/common';
@@ -12,11 +19,26 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './live.component.html',
   styleUrl: './live.component.css',
 })
-export class LiveComponent implements OnInit {
-  constructor(private service: ApiCallService, private toast: ToastrService) {}
+export class LiveComponent implements OnInit, OnDestroy {
+  constructor(
+    private service: ApiCallService,
+    private toast: ToastrService,
+    private ngZone: NgZone,
+    private cdr: ChangeDetectorRef
+  ) {}
   liveMatches: any;
+  intervalId: any;
   ngOnInit(): void {
     this.loadLiveMatches();
+
+    this.ngZone.runOutsideAngular(() => {
+      this.intervalId = setInterval(() => {
+        this.ngZone.run(() => {
+          this.loadLiveMatches();
+          this.cdr.markForCheck();
+        });
+      }, 5000);
+    });
   }
 
   reloadClass: any;
@@ -38,5 +60,11 @@ export class LiveComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  ngOnDestroy(): void {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
   }
 }
