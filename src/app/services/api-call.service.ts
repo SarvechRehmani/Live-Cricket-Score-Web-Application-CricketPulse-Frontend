@@ -15,7 +15,7 @@ export class ApiCallService {
     return this.http.get(`${environment.apiUrl}/match/live`);
   }
   getUpcomingMatches() {
-    return this.http.get(`${environment.apiUrl}/match/upcoming`);
+    return this.http.get(`${environment.apiUrl}/upcoming-matches`);
   }
   getPointTable() {
     return this.http.get(`${environment.apiUrl}/match/wc23-point-table`);

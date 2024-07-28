@@ -3,3 +3,12 @@
     Upcoming Cricket Matches
   </h1>
 </div>
+<div class="card-container items-stretch flex flex-wrap flex-col md:flex-row">
+  @for (series of upcomingSeries; track $index) {
+  <div class="md:w-[50%] w-full mb-4">
+    <app-upcoming-match [series]="series" />
+  </div>
+  }@empty {
+  <h1 class="text-center text-gray-800">No live matches found.</h1>
+  }
+</div>
